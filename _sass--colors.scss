@@ -1,0 +1,24 @@
+
+// Colors
+// retrieve color from $color-palette map
+
+@function color($color-name, $alpha: 1, $darken: 0, $lighten: 0) {
+
+  // color options - darken & lighten are optional with alpha set by default
+
+  @if ($darken != 0) {
+
+    // If you are setting a darken option
+    @return darken(map-get($color-palette, $color-name), $darken);
+
+  } @else if ($lighten != 0) {
+
+    // If you are setting a ligthen option
+    @return lighten(map-get($color-palette, $color-name), $lighten);
+
+  } @else {
+
+    // by default opacity/alpha is set to 1, but can be altered with $alpha
+    @return rgba(map-get($color-palette, $color-name), $alpha);
+  }
+}
