@@ -7,12 +7,10 @@
   // color options - darken & lighten are optional with alpha set by default
 
   @if ($darken != 0) {
-
     // If you are setting a darken option
     @return darken(map-get($color-palette, $color-name), $darken);
 
   } @else if ($lighten != 0) {
-
     // If you are setting a ligthen option
     @return lighten(map-get($color-palette, $color-name), $lighten);
 
