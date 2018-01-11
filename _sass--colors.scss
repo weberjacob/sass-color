@@ -1,9 +1,7 @@
 
 // Colors
-// retrieve color from $color-palette map
-
+// retrieve color from $color-palette map and pass additional values
 @function color($color-name, $alpha: 1, $darken: 0, $lighten: 0) {
-
   // color options - darken & lighten are optional with alpha set by default
 
   @if ($darken != 0) {
@@ -11,7 +9,7 @@
     @return darken(map-get($color-palette, $color-name), $darken);
 
   } @else if ($lighten != 0) {
-    // If you are setting a ligthen option
+    // If you are setting a lighten option
     @return lighten(map-get($color-palette, $color-name), $lighten);
 
   } @else {
